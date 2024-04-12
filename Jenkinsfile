@@ -29,8 +29,8 @@ pipeline {
                 {
                         steps {
 				sh 'sudo chmod 666 /var/run/docker.sock'
-                                sh 'docker build -t gzander7/flaskdemo:$VERSION .'
-                                sh 'docker build -t gzander7/flaskdemo:latest .'
+                                sh 'docker build -t gzander7/csc324flaskapp:$VERSION .'
+                                sh 'docker build -t gzander7/csc324flaskapp:latest .'
                         }
                 }
 
@@ -44,8 +44,8 @@ pipeline {
 		stage('Push Image to Dockerhub') {
 
 			steps {
-				sh 'docker push gzander7/flaskdemo:$VERSION'
-				sh 'docker push gzander7/flaskdemo:latest'
+				sh 'docker push gzander7/csc324flaskapp:$VERSION'
+				sh 'docker push gzander7/csc324flaskapp:latest'
 			}
 		}
 
